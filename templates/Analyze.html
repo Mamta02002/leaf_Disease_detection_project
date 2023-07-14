@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width">
+    <title>Model Deployment</title>
+    <style>
+        body{
+            margin:0;
+            background-image:url("https://www.iliketowastemytime.com/sites/default/files/fields-of-sunrise-hd-wallpaper.jpg");
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        ul.topnav{
+            font-weight: bold;
+            font-size: 20px;
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+            background-color:antiquewhite;
+
+        }
+        ul.topnav li{float:left;}
+        ul.topnav li a{
+            display:block;
+            color:black;
+            text-align:center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        ul.topnav li a:hover:not(.active){background-color:#04AA6D;}
+        ul.topnav li a.active{background-color:#04AA6D}
+        ul.topnav li.right{float:right;}
+        @media screen and (max-width:600px) {ul.topnav li.right,
+        ul.topnav li{float:none;}}
+                /* Split the screen in half */
+        .split {
+            margin:100px;
+            padding:100px;
+        height: 50%;
+        width: 30%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+        }
+
+        /* Control the left side */
+        .left {
+        left: 0;
+        background-color:beige;
+        }
+
+        /* Control the right side */
+        .right {
+        right: 0;
+        background-color:aquamarine;
+        }
+
+        /* If you want the content centered horizontally and vertically */
+        .centered {
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        }
+
+        input { size: 100px;
+            font-size: 20px;
+            box-sizing:border-box;
+            border: 30px 30px 30px 30px;
+            border-style: dotted;
+        }
+
+        .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul class="topnav">
+        <li><a href="/" target="_self">Home</a></li>
+        <li><a class="active" href="index.html" target="_self">Analyze</a>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+    <div style="margin:50px; padding:100px; box-sizing: border-box;">
+        <div class="split left">
+            <div class="centered">
+              <h2>Disease</h2>
+              <p>Click below to detect the desease on the leaf and measure severity as well.</p>
+              <a href="disease.html" class="button">Detect Disease</a>
+            </div>
+          </div>
+          
+          <div class="split right">
+            <div class="centered">
+              <h2>Pests</h2>
+              <p>Click below to detect the type of pest in your field by inserting the image of the pest.</p>
+              <a href="#" class="button">Detect Pest</a>
+            </div>
+          </div>          
+
+
+    <!-- <h1>Youtube Video Sentiment Analysis</h1>
+    <p style="font-size: 20px;">
+       Enter the url link of the youtube video
+    </p>
+    <form action="/" method="POST">
+        <input type="url" name="videolink" placeholder="enter the youtube video link">
+        <input type="submit">
+    </form>-->
+
+    <!--to be included with flask app-->
+    <!-- {%if prediction %}
+    <p>Your Predicted Sentiment is: </p>{{prediction}}
+    {% endif %} -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <title>Model Deployment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+        <style>
+            body{
+                margin:0;
+                background: linear-gradient(to bottom, #063b4d 50%, #a9ced9 100%)
+                /* background-repeat:no-repeat;
+                background-attachment: fixed;
+                background-size: cover; */
+            
+            }
+            p{
+                color:white;
+                font-size:20px;
+                font-weight: normal;
+            }
+            ul.topnav{
+                font-weight: bold;
+                font-size: 20px;
+                list-style-type:none;
+                margin:0;
+                padding:0;
+                overflow:hidden;
+                background-color:antiquewhite;
+    
+            }
+            ul.topnav li{float:left;}
+            ul.topnav li a{
+                display:block;
+                color:black;
+                text-align:center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            ul.topnav li a:hover:not(.active){background-color:#04AA6D;}
+            ul.topnav li a.active{background-color:#04AA6D}
+            ul.topnav li.right{float:right;}
+            @media screen and (max-width:600px) {ul.topnav li.right,
+            ul.topnav li{float:none;}}
+    
+            /* div.foreground{
+                margin:50px 300px;
+                padding: 50px;
+                text-align: center;
+                border-style: double;
+            } */
+            div.transbox {
+                background-color: rgb(22, 22, 22);
+                border: 1px solid black;
+                opacity: 0.7;
+                margin:50px 300px;
+                padding: 30px;
+                text-align: center;
+            }
+    
+            input { 
+                font-size: 20px;
+                box-sizing:border-box;
+                /* border: 30px 30px 30px 30px; */
+                border-style:solid;
+                border-width: 1px;
+    
+            }
+            h1{
+                color:white;
+                font-style: italic;
+                font-weight: bolder;
+                font-size:40px;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <ul class="topnav">
+            <li><a href="/">Home</a></li>
+            <li><a class="active" href="/analyze" target="_self">Analyze</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+
+    <p>Instructions for calculating the severity and performing instance segmentation :<br></p>
+  <p>
+  Step 1:- Image Path: Please enter the file path in the "Image Path" field.<br>
+     - Example: /path/to/image.jpg <br></p><br>
+  <p>
+  Step 2:- Annotation Path: If you already have an annotation file in XML or JSON format for the image, please enter its path in the "Annotation Path" field.<br>
+     - Example XML: /path/to/annotation.xml <br>
+     - Example JSON: /path/to/annotation.json <br>
+  </p><br>
+  <p>
+  Step 3:- Generating Annotation File:<br>
+     - If you don't have an annotation file, you can generate one using free online tools like IMG LAB or VGG Annotator.<br>
+     - For XML format: Use a tool like <a href="https://imglab.in/#" target="_blank"> IMG LAB</a> to create the annotations and export them in Pascal VOC XML format. Then provide the path of the generated XML file in the "Annotation Path" field.<br>
+     - For JSON format: Use a tool like <a href="https://www.robots.ox.ac.uk/~vgg/software/via/via.html" target="_blank">VGG Annotator</a> to create the annotations and export them in JSON format. Then provide the path of the generated JSON file in the "Annotation Path" field.<br>
+     - Ensure accurate and clear annotations with well-defined bounding boxes and appropriate labels for each annotated object.<br> 
+     </p><hr>
+  <p>
+  Note: If you're using an online tool to generate the annotation file, make sure to follow the tool's instructions for exporting in the desired format.<br></p>
+
+</body>
+</html>

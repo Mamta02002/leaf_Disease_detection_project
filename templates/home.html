@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen and max-width: 1170px" href="C:\Users\mamta\Desktop\DESKTOP MAMTA\STUDY BSC DATA ANALYTICS\semester 4 bsc data analytics\Entrepreneurship\35 Food Website Phone Display.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Flask Web App</title>
+    <style>
+        body{
+            margin:0;
+            background-image:url("https://www.iliketowastemytime.com/sites/default/files/fields-of-sunrise-hd-wallpaper.jpg");
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        ul.topnav{
+            font-weight: bold;
+            font-size: 15px;
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+            background-color:rgb(243, 243, 115);
+
+        }
+
+        ul.topnav li{float:left;}
+        ul.topnav li a{
+            display:block;
+            color:black;
+            text-align:center;
+            padding: 12px 40px;
+            text-decoration: none;
+        }
+        ul.topnav li a:hover:not(.active){background-color:#04AA6D;}
+        ul.topnav li a.active{background-color:#04AA6D}
+        ul.topnav li.right{float:right;}
+        @media screen and (max-width:600px) {ul.topnav li.right,
+        ul.topnav li{float:none;}}
+
+        div{
+            margin:50px 300px;
+            padding: 50px;
+            text-align: center;
+            border-style: double;
+        }
+        div.transbox {
+            background-color: #ffffff;
+            border: 1px solid black;
+            opacity: 0.7;
+        }
+
+        input { size: 100px;
+            font-size: 20px;
+            box-sizing:border-box;
+            border: 30px 30px 30px 30px;
+            border-style: dotted;
+        }
+        h1{
+            color:rgb(78, 4, 4);
+            font-style: italic;
+            font-weight: bolder;
+            font-size:40px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+    <ul class="topnav">
+        <li><a href="#"><i class="fa fa-pagelines" style="font-size:25px" aria-hidden="true"></i>VrikshArogya</a></li>
+        <li><a class="active" href="/"><i class="fa fa-home" style="font-size:15px" aria-hidden="true"></i>Home</a></li>
+        <li><a href="/analyze" target="_self"><i class="fa fa-codepen" style="font-size:15px" aria-hidden="true"></i>Analyze</a></li>
+        <li><a href="/about"><i class="fa fa-user" style="font-size:15px" aria-hidden="true"></i>About</a></li>
+        <li><a href="/contact"><i class="fa fa-phone" style="font-size:15px" aria-hidden="true"></i>Contact</a></li>
+    </ul></nav>
+    <div class="transbox">
+        <!-- <img src="http://www.clipartbest.com/cliparts/9TR/5yM/9TR5yMjjc.png" alt="logo" width="200" height="200"> -->
+        <img src ="https://th.bing.com/th/id/OIG.7uOHcIhnlVNkOBbDUjzz?pid=ImgGn" width="200" height="200">
+        <h1>Welcome to VrikshArogya</h1>
+        <h2>Welcome to The Leaf Disease Detection web app</h2>
+        <p style="color:black; font-weight: bold; font-size: 20px;">Kindly move to the analyze section to detect the disease and measure severity</p>
+    </div>
+</body>
+</html>

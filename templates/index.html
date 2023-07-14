@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <title>Model Deployment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body{
+            margin:0;
+            background-image:url("https://www.iliketowastemytime.com/sites/default/files/fields-of-sunrise-hd-wallpaper.jpg");
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        ul.topnav{
+            font-weight: bold;
+            font-size: 15px;
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            overflow:hidden;
+            background-color:rgb(243, 243, 115);
+
+        }
+        ul.topnav li{float:left;}
+        ul.topnav li a{
+            display:block;
+            color:black;
+            text-align:center;
+            padding: 12px 40px;
+            text-decoration: none;
+        }
+        ul.topnav li a:hover:not(.active){background-color:#04AA6D;}
+        ul.topnav li a.active{background-color:#04AA6D}
+        ul.topnav li.right{float:right;}
+        @media screen and (max-width:600px) {ul.topnav li.right,
+        ul.topnav li{float:none;}}
+
+        /* div.foreground{
+            margin:50px 300px;
+            padding: 50px;
+            text-align: center;
+            border-style: double;
+        } */
+        div.transbox {
+            background-color: rgb(24, 3, 3);
+            border: 1px solid rgb(255, 254, 254);
+            opacity: 0.7;
+            margin:50px 300px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        input { 
+            font-size: 20px;
+            box-sizing:border-box;
+            /* border: 30px 30px 30px 30px; */
+            border-style:solid;
+            border-width: 1px;
+
+        }
+        h1{
+            color:white;
+            font-style: italic;
+            font-weight: bolder;
+            font-size:40px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <ul class="topnav">
+        <li><a href="#"><i class="fa fa-pagelines" style="font-size:25px" aria-hidden="true"></i>VrikshArogya</a></li>
+        <li><a href="/"><i class="fa fa-home" style="font-size:15px" aria-hidden="true"></i>Home</a></li>
+        <li><a class="active" href="/analyze" target="_self"><i class="fa fa-codepen" style="font-size:15px" aria-hidden="true"></i>Analyze</a></li>
+        <li><a href="/about"><i class="fa fa-user" style="font-size:15px" aria-hidden="true"></i>About</a></li>
+        <li><a href="/contact"><i class="fa fa-phone" style="font-size:15px" aria-hidden="true"></i>Contact</a></li>
+    </ul>
+    <div class="transbox">
+        <h1>Leaf Disease Detection</h1>
+        <p style="font-size: 25px; font-style: italic;font-weight: bold; color:white;">
+           Insert the Image of Potato and Apple leaf
+        </p>
+        <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+            <div id="selectedBanner"></div>
+            <input type="file" class="form-control" name="image" id="img" />
+            
+                <button type="submit" style="height: 30px;width: auto;font-size:20px">Predict</button>
+            
+
+        </form>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+      ></script>
+      <script>
+        var selDiv = "";
+        var storedFiles = [];
+        $(document).ready(function () {
+          $("#img").on("change", handleFileSelect);
+          selDiv = $("#selectedBanner");
+        });
+  
+        function handleFileSelect(e) {
+          var files = e.target.files;
+          var filesArr = Array.prototype.slice.call(files);
+          filesArr.forEach(function (f) {
+            if (!f.type.match("image.*")) {
+              return;
+            }
+            storedFiles.push(f);
+  
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              var html =
+                '<img src="' +
+                e.target.result +
+                "\" data-file='" +
+                f.name +
+                "alt='Category Image' height='300px' width='300px'>";
+              selDiv.html(html);
+            };
+            reader.readAsDataURL(f);
+          });
+        }
+      </script>
+    </div>
+</body>
+</html>
