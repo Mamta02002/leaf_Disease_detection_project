@@ -1,3 +1,4 @@
+pip==23.0.1
 flask==2.2.2
 h5py==3.7.0
 matplotlib==3.7.1
