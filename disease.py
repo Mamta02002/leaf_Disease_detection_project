@@ -32,7 +32,7 @@ def predict():
         i = tf.keras.preprocessing.image.img_to_array(img)
         img = np.expand_dims(i,axis=0)
         pred = np.argmax(model.predict(img))
-        classes = {'apple': 0, 'potato': 1, 'tomato': 2}
+        classes = {'apple': 0, 'potato': 1}
         return list(classes.keys())[list(classes.values()).index(pred)]
 
     # def severity_prediction(path):
