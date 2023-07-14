@@ -11,11 +11,11 @@ import cv2
 app=Flask(__name__)
 @app.route("/")
 def hello_world():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @app.route("/analyze",methods=["GET","POST"])
 def analyze():
-    return render_template('index.html')
+    return render_template('analyze.html')
 
 @app.route("/predict", methods = ["GET","POST"])
 def predict():
